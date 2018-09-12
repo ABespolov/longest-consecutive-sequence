@@ -1,7 +1,7 @@
 module.exports = function longestConsecutiveLength(array) {
     var show = false;
 
-    var result = [];
+    var result = [1];
 
 
     function uniq(a) {
@@ -14,7 +14,6 @@ module.exports = function longestConsecutiveLength(array) {
     array = array.sort((a, b) => a - b);
 
     try {
-
         array.reduce((prev, curr, index, arr) => {
             if (curr - prev == 1) {
                 result[result.length - 1]++;
@@ -26,8 +25,6 @@ module.exports = function longestConsecutiveLength(array) {
     } catch (error) {
         return 0;
     }
-
-
 
     return Math.max.apply(null, result);
 
